@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./vendor/css/classJS.css">
+    <script src="./vendor/js/country-states.js"></script>
+</head>
+<body>
+
+    <h2>Modal Login Form</h2>
+        
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="../JavaSCript/vendor/img/USAflag.png" alt="Avatar" class="avatar" width="1%" height="1%">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+            
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+          
+        </div>
+
+        
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+
+        
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</button>
+    
+    <div id="id02" class="modal">
+      
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="../JavaSCript/vendor/img/USAflag.png" alt="Avatar" class="avatar" width="1%" height="1%">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>First Name</b></label>
+          <input type="text" placeholder="First Name" name="uname" required>
+    
+          <label for="uname"><b>Middle Name</b></label>
+          <input type="text" placeholder="Middle Name" name="psw" required>
+
+          <label for="uname"><b>Last Name</b></label>
+          <input type="text" placeholder="Last Name" name="psw" required class="inputfield">
+
+          <label for="uname"><b>Phone Number</b></label>
+          <input type="text" placeholder="Phone Number" name="psw" required class="inputfield">
+
+          <label for="uname"><b>Email</b></label>
+          <input type="email" placeholder="Email" name="psw" required class="inputfield">
+
+          <label for="uname"><b>Address</b></label>
+          <input type="text" placeholder="Address" name="psw" required class="inputfield">
+
+          <div>
+            <label for="uname"><b>Enter Your L.G.A</b></label>
+            <input type="text" placeholder="L.G.A" name="psw" required class="inputfield">
+          </div>
+          
+
+          <label for="uname"><b>City/Town</b></label>
+          <select name="" id="cityselect" size="1" class="inputfield">
+              <option value="" disabled selected>Lagos</option>
+              <option value="" disabled selected>Ibadan</option>
+              <option value="" disabled selected>Kano</option>
+              <option value="" disabled selected>Port-Harport</option>
+              <option value="" disabled selected>City/Town</option>
+          </select>
+
+          <select id="citySelect" size="1" >
+            <option value="" disabled selected>Choose City</option>
+            <option></option>
+            </select>
+
+          <label for="uname"><b>State</b></label>
+          <select name="" id="state-code" class="inputfield">
+              <option value="">Select State</option>
+          </select>
+
+          <label for="uname"><b>Country</b></label>
+          <select name="" id="country" class="inputfield">
+              <option value="">Select Country</option>
+          </select>
+
+          <label for="uname"><b>Date Of Birth</b></label>
+          <input type="date" placeholder="Date Of Birth" name="psw" required class="inputfield">
+
+          <label for="uname"><b>User</b></label>
+          <input type="text" placeholder="User" name="psw" required class="inputfield">
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Password" name="psw" required class="inputfield">
+
+
+
+
+            
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+          
+        </div>
+
+        
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+
+
+<script>
+    // user country code for selected option
+    let user_country_code = "IN";
+    
+    (function () {
+        // script https://www.html-code-generator.com/html/drop-down/country-region
+    
+        // Get the country name and state name from the imported script.
+        let country_list = country_and_states['country'];
+        let states_list = country_and_states['states'];
+    
+        // creating country name drop-down
+        let option =  '';
+        option += '<option>select country</option>';
+        for(let country_code in country_list){
+            // set selected option user country
+            let selected = (country_code == user_country_code) ? ' selected' : '';
+            option += '<option value="'+country_code+'"'+selected+'>'+country_list[country_code]+'</option>';
+        }
+        document.getElementById('country').innerHTML = option;
+    
+        // creating states name drop-down
+        let text_box = '<input type="text" class="input-text" id="state">';
+        let state_code_id = document.getElementById("state-code");
+    
+        function create_states_dropdown() {
+            // get selected country code
+            let country_code = document.getElementById("country").value;
+            let states = states_list[country_code];
+            // invalid country code or no states add textbox
+            if(!states){
+                state_code_id.innerHTML = text_box;
+                return;
+            }
+            let option = '';
+            if (states.length > 0) {
+                option = '<select id="state">\n';
+                for (let i = 0; i < states.length; i++) {
+                    option += '<option value="'+states[i].code+'">'+states[i].name+'</option>';
+                }
+                option += '</select>';
+            } else {
+                // create input textbox if no states 
+                option = text_box
+            }
+            state_code_id.innerHTML = option;
+        }
+    
+        // country select change event
+        const country_select = document.getElementById("country");
+        country_select.addEventListener('change', create_states_dropdown);
+    
+        create_states_dropdown();
+    })();
+    
+    </script>
+    
+</body>
+</html>
